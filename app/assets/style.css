@@ -13,9 +13,46 @@ main {
     background-color: antiquewhite;
 }
 
-h1 {
-    color: aliceblue;
+.header {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #e1dddd;
+}
+
+.form-search input {
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    border: none;
+    background-color: #f4f2f1;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+a {
+    color: #848586;
+    font-size: 1.5rem;
     text-decoration: none;
+}
+
+span {
+    color: #848586;
+    font-size: 1.5rem;
+}
+
+nav {
+    width: 350px;
+    height: 100px;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .cargador {
