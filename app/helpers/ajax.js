@@ -9,6 +9,6 @@ export function ajax (params) {
         <p>Error ${error.status}: ${mensaje}</p>
         </div>`
 
-        console.log(error)
+        console.error(error)
     })
 }
