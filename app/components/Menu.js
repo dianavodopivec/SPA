@@ -6,6 +6,8 @@ export function Menu() {
     <span>-</span>
     <a href="#/search">Busqueda</a>
     <span>-</span>
+    <a href="#/contacto">Contacto</a>
+    <span>-</span>
     <a href="https://github.com/dianavodopivec">GitHub</a>
     `
     return $menu;

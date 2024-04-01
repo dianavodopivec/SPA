@@ -5,7 +5,8 @@ export function ajax (params) {
     .then(json => cbSuccess(json)) //Si la promesa SI se cumple.
     .catch(error => { //Manejo de errores
         const mensaje = error.satusText || "Ocurrió un error al acceder a la API ☹️"
-        document.getElementById("root").innerHTML = `<div>
+
+        document.getElementById("posts").innerHTML = `<div>
         <p>Error ${error.status}: ${mensaje}</p>
         </div>`
 

@@ -49,6 +49,15 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: whitesmoke;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -ms-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+}
+
 span {
     color: #848586;
     font-size: 1.5rem;
@@ -83,6 +92,8 @@ nav {
 img {
     height: 170px;
     width: 260px;
+    background-size: contain;
+    background-repeat: no-repeat;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -91,7 +102,7 @@ img {
 }
 
 h2 {
-    width: 280px;
+    width: 250px;
     font-size: 1rem;
     text-align: center;
     margin: 10px;
@@ -111,6 +122,6 @@ p {
 time {
     font-size: 0.8rem;
     font-style: italic;
-    margin-right: 100px;
+    margin-right: 20px;
 }
 
