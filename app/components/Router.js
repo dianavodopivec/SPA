@@ -6,7 +6,7 @@ import {PostCard} from "./PostCard.js";
 //Router -> Invoca las peticiones.
 export function Router() {
     let {hash} = location;
-    const $posts = document.getElementById("posts")
+    const $posts = document.getElementById("main")
     console.log(hash)
 
     $posts.innerHTML = null //Igualamos el HTML a null para que la carga de su contenido cargue limpiamente ()
