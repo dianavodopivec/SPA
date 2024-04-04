@@ -27,12 +27,11 @@ img {
     -o-border-radius: 15px;
 }
 
-.loader {
+.cargador {
     height: 4rem;
     width: 4rem;
     margin: 1rem auto;
     display: block;
-
 }
 
 header {
