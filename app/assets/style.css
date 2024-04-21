@@ -105,3 +105,19 @@ time {
     padding-left: 20px;
     color: #363333;
 }
+
+h2 {
+    text-align: center;
+}
+
+aside {
+    padding: 30px;
+}
+
+article {
+    padding: 50px;
+}
+
+img {
+    width: 500px;
+}

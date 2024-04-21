@@ -2,6 +2,7 @@
 import api from "../helpers/wp_api.js"
 import {ajax} from "../helpers/ajax.js";
 import {PostCard} from "./PostCard.js";
+import { Post } from "./Post.js";
 
 //Router -> Invoca las peticiones.
 export async function Router() {
@@ -23,13 +24,21 @@ export async function Router() {
                     $main.innerHTML = html;
                 })
             }
-        })        //Si encuentra el fragmento entre (), validará a true y en caso contrario false.
+        })
+    //Si encuentra el fragmento entre (), validará a true y en caso contrario false.
     } else if (hash.includes("#/search")) { 
         $main.innerHTML = "<h2> Sección de Buscador </h2>"
     } else if (hash === "#/contacto") { 
         $main.innerHTML = "<h2> Sección de Contacto </h2>"
     } else {
-        $main.innerHTML = "<h2> Carga del contenido del Post previamente seleccionado </h2>"
+        //Acceso del EndPoint al Post o información del post.
+        await ajax({
+            //Construcción dinámica del endpoint/Id del post al que queremos acceder.
+            url: `${api.POST}/${localStorage.getItem("wpPostId")}`, 
+            cbSuccess: (post) => {
+                $main.innerHTML = Post(post)
+            }
+        })
     }
 
     //Loader desaparece en las distintas páginas
