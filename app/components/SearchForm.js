@@ -7,5 +7,16 @@ export function SearchForm() {
     $input.placeholder = "Buscar ..."
 
     $form.appendChild($input)
+
+    document.addEventListener("submit", e => {
+        if(!e.target(".search-form")) {
+            return false
+        } else {
+            e.preventDefault();
+            localStorage.setItem("wpSearch", e.target.search.value);
+            location.hash = `#/search?search=${e.target.search.value}`;
+        }
+    })
+
     return $form;
 }
