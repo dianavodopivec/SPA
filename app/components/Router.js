@@ -8,7 +8,7 @@ import { Post } from "./Post.js";
 export async function Router() {
     let {hash} = location;
     const $main = document.getElementById("main")
-    console.log(hash)
+    //console.log(hash)
 
     $main.innerHTML = null //Igualamos el HTML a null para que la carga de su contenido cargue limpiamente ()
 

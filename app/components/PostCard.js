@@ -1,5 +1,5 @@
 export function PostCard(props) {
-    console.log(props)
+    //console.log(props)
     let {date, id, slug, title, jetpack_featured_media_url} = props
     let dateFormat = new Date(date).toLocaleString();
     const noImg = jetpack_featured_media_url && jetpack_featured_media_url["wp:featuredmedia"] && featured_media_src_url["wp:featuredmedia"][0] ? featured_media_src_url["wp:featuredmedia"][0].source_url : "app/assets/luna.png";

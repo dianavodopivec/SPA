@@ -9,11 +9,13 @@ export function SearchForm() {
     $form.appendChild($input)
 
     document.addEventListener("submit", e => {
-        if(!e.target(".search-form")) {
+        if(!e.target.matches(".form-search")) {
+            //En caso de no haber coincidencia con "search-form", se pasará a ...
             return false
         } else {
             e.preventDefault();
             localStorage.setItem("wpSearch", e.target.search.value);
+            //Cambio de HASH para que detecte un cambio en la app.
             location.hash = `#/search?search=${e.target.search.value}`;
         }
     })
