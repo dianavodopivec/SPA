@@ -26,12 +26,23 @@ export async function Router() {
             }
         })
     //Si encuentra el fragmento entre (), validará a true y en caso contrario false.
-    } else if (hash.includes("#/search")) { 
-        $main.innerHTML = "<h2> Sección de Buscador </h2>"
+    } else if (hash.includes("#/search")) { //SEARCH
+        let query = localStorage.getItem("wpSearch");
+        if(!query) {
+            return false //Salida de opciones del Router 
+        } else {
+            await ajax({
+                //Concatenación con variable query (palabra que seleccionó el usuario)
+                url: `${api.SEARCH}${query}`,
+                cbSuccess: (search) => {
+                    console.log(search)
+                }
+            })
+        }
+
     } else if (hash === "#/contacto") { 
         $main.innerHTML = "<h2> Sección de Contacto </h2>"
-    } else {
-        //Acceso del EndPoint al Post o información del post.
+    } else { //POST
         await ajax({
             //Construcción dinámica del endpoint/Id del post al que queremos acceder.
             url: `${api.POST}/${localStorage.getItem("wpPostId")}`, 
