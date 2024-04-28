@@ -30,7 +30,7 @@ export async function Router() {
     } else if (hash.includes("#/search")) { //SEARCH
         let query = localStorage.getItem("wpSearch");
         if(!query) {
-            document.querySelector("cargador").style.display = "none"
+            document.querySelector(".cargador").style.display = "none"
             return false //Salida de opciones del Router 
         } else {
             await ajax({
@@ -40,13 +40,14 @@ export async function Router() {
                     //console.log(search)
                     let html = ""
                     //Si no hay resultados de busqueda:
-                    if(search.lenght === 0) {
+                    if(search.length === 0) {
                         html = `
                         <p class="error">
                         No existen resultados de búsqueda para el término
                         <mark>${query}</mark>
                         </p>
                         `
+                        $main.innerHTML = html;
                     } else {
                         search.forEach(post => 
                             {

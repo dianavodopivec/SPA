@@ -2,6 +2,7 @@ import {Header} from "./components/Header.js";
 import {Main} from "./components/Main.js";
 import {Loader} from "./components/Loader.js";
 import {Router} from "./components/Router.js";
+import {InfiniteScroll} from "./helpers/infinite_scroll.js";
 
 //Renderizado de Header, Post y Loader.
 export function App() {
@@ -13,6 +14,7 @@ export function App() {
     $root.appendChild(Main());
     $root.appendChild(Loader());
 
-    Router()
+    Router();
+    InfiniteScroll();
 }
 

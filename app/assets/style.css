@@ -16,15 +16,10 @@ img {
 
 .error {
     padding: 1rem;
-    font-size: 3rem;
+    font-size: 1.2rem;
     text-align: center;
     color: #fff;
     background-color: #e84242;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
 }
 
 .cargador {
