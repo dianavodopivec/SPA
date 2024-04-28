@@ -3,6 +3,7 @@ import api from "../helpers/wp_api.js"
 import {ajax} from "../helpers/ajax.js";
 import {PostCard} from "./PostCard.js";
 import { Post } from "./Post.js";
+import { SearchCard } from "./SearchCard.js";
 
 //Router -> Invoca las peticiones.
 export async function Router() {
@@ -29,13 +30,30 @@ export async function Router() {
     } else if (hash.includes("#/search")) { //SEARCH
         let query = localStorage.getItem("wpSearch");
         if(!query) {
+            document.querySelector("cargador").style.display = "none"
             return false //Salida de opciones del Router 
         } else {
             await ajax({
                 //Concatenación con variable query (palabra que seleccionó el usuario)
                 url: `${api.SEARCH}${query}`,
                 cbSuccess: (search) => {
-                    console.log(search)
+                    //console.log(search)
+                    let html = ""
+                    //Si no hay resultados de busqueda:
+                    if(search.lenght === 0) {
+                        html = `
+                        <p class="error">
+                        No existen resultados de búsqueda para el término
+                        <mark>${query}</mark>
+                        </p>
+                        `
+                    } else {
+                        search.forEach(post => 
+                            {
+                                html += SearchCard(post)
+                            })
+                        $main.innerHTML = html; 
+                    }
                 }
             })
         }
